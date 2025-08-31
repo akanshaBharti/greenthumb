@@ -114,7 +114,7 @@ export default function Contact() {
     try {
       await emailjs.send(
         "service_green_thumb", // e.g. service_xxxxx
-        "template_d95u5b3", // e.g. template_xxxxx
+        "template_33gg2sf", // e.g. template_xxxxx
         {
           from_name: `${data.firstName} ${data.lastName}`,
           from_email: data.email,
@@ -122,7 +122,7 @@ export default function Contact() {
           service: data.service,
           message: data.message,
         },
-        "jZ3dGXWMmmFFo-Adz" // e.g. AbCdEf123456
+        "DI_HBtf80DLmjRnyD" // e.g. AbCdEf123456
       );
 
       setStatus({ success: true, message: "Message sent successfully!" });
