@@ -10,7 +10,7 @@ export function SEO({
 }) {
   useEffect(() => {
     // Set document title
-    document.title = `${title} | GreenThumb`;
+    document.title = `GreenThumb`;
     
     // Set or update meta tags
     const updateMetaTag = (name, content, property = false) => {

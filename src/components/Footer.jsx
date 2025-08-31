@@ -1,5 +1,5 @@
-import { Leaf, Instagram, Facebook, Twitter, Youtube } from "lucide-react"
-import { motion } from "framer-motion"
+import { Leaf, Instagram, Facebook, Twitter, Youtube } from "lucide-react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const quickLinks = [
@@ -9,23 +9,23 @@ const quickLinks = [
   { name: "Projects", href: "/projects" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
-]
+];
 
 const services = [
   "Plant Care",
-  "Interior Design", 
+  "Interior Design",
   "Plant Delivery",
   "Consultation",
   "Maintenance",
   "Workshops",
-]
+];
 
 const socialLinks = [
   { name: "Instagram", icon: Instagram, href: "#" },
   { name: "Facebook", icon: Facebook, href: "#" },
   { name: "Twitter", icon: Twitter, href: "#" },
   { name: "Youtube", icon: Youtube, href: "#" },
-]
+];
 
 export function Footer() {
   return (
@@ -34,7 +34,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <motion.div 
+            <motion.div
               className="flex items-center space-x-2 mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -43,17 +43,18 @@ export function Footer() {
               <Leaf className="text-2xl text-primary" />
               <span className="text-xl font-bold text-white">GreenThumb</span>
             </motion.div>
-            <motion.p 
+            <motion.p
               className="text-slate-400 mb-6 max-w-md"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              Transforming spaces with premium plants and expert care. We're your partners in creating 
-              beautiful, healthy indoor environments that enhance your life and wellbeing.
+              Transforming spaces with premium plants and expert care. We're
+              your partners in creating beautiful, healthy indoor environments
+              that enhance your life and wellbeing.
             </motion.p>
-            <motion.div 
+            <motion.div
               className="flex space-x-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +62,7 @@ export function Footer() {
               transition={{ delay: 0.2 }}
             >
               {socialLinks.map((social, index) => {
-                const Icon = social.icon
+                const Icon = social.icon;
                 return (
                   <motion.a
                     key={social.name}
@@ -78,7 +79,7 @@ export function Footer() {
                     <Icon className="w-5 h-5" />
                     <span className="sr-only">{social.name}</span>
                   </motion.a>
-                )
+                );
               })}
             </motion.div>
           </div>
@@ -90,11 +91,19 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">
+              Quick Links
+            </h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} data-testid={`footer-${link.name.toLowerCase().replace(' ', '-')}`}>
+                  <Link
+                    to={link.href}
+                    data-testid={`footer-${link.name
+                      .toLowerCase()
+                      .replace(" ", "-")}`}
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
                     <a className="hover:text-primary transition-colors duration-200">
                       {link.name}
                     </a>
@@ -115,10 +124,12 @@ export function Footer() {
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service}>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="hover:text-primary transition-colors duration-200"
-                    data-testid={`service-${service.toLowerCase().replace(' ', '-')}`}
+                    data-testid={`service-${service
+                      .toLowerCase()
+                      .replace(" ", "-")}`}
                   >
                     {service}
                   </a>
@@ -129,7 +140,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <motion.div 
+        <motion.div
           className="border-t border-slate-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -137,21 +148,33 @@ export function Footer() {
           transition={{ delay: 0.5 }}
         >
           <p className="text-slate-400 text-sm mb-4 md:mb-0">
-            © 2024 GreenThumb. All rights reserved.
+            © 2025 GreenThumb. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
-            <a href="#" className="hover:text-primary transition-colors duration-200" data-testid="privacy-policy">
+            <a
+              href="#"
+              className="hover:text-primary transition-colors duration-200"
+              data-testid="privacy-policy"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-primary transition-colors duration-200" data-testid="terms-of-service">
+            <a
+              href="#"
+              className="hover:text-primary transition-colors duration-200"
+              data-testid="terms-of-service"
+            >
               Terms of Service
             </a>
-            <a href="#" className="hover:text-primary transition-colors duration-200" data-testid="cookie-policy">
+            <a
+              href="#"
+              className="hover:text-primary transition-colors duration-200"
+              data-testid="cookie-policy"
+            >
               Cookie Policy
             </a>
           </div>
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }

@@ -11,22 +11,22 @@ const stats = [
 
 const team = [
   {
-    name: "Sarah Johnson",
+    name: "K. Johnson",
     role: "Head of Plant Care",
     description: "15+ years in horticulture and plant health",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
+    image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
   },
   {
     name: "Michael Chen",
     role: "Lead Designer", 
     description: "Specialized in biophilic interior design",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
+    image: "https://img.freepik.com/premium-photo/business-people-portrait-concept-smiling-businessman-face-portrait_380164-119773.jpg"
   },
   {
     name: "Emma Rodriguez",
     role: "Customer Experience",
     description: "Ensuring every customer finds their perfect plant",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
   }
 ]
 
@@ -89,10 +89,10 @@ export default function About() {
                     transition={{ delay: 0.2 + index * 0.1 }}
                     data-testid={`stat-${stat.label.toLowerCase().replace(' ', '-')}`}
                   >
-                    <Card className="text-center p-4">
+                    <Card className="text-center md:p-4 py-2">
                       <CardContent>
-                        <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                        <div className="text-sm text-muted-foreground">{stat.label}</div>
+                        <div className="text-center text-2xl font-bold text-primary">{stat.value}</div>
+                        <div className="text-center text-sm text-muted-foreground">{stat.label}</div>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -156,7 +156,7 @@ export default function About() {
       </section>
 
       {/* Mission & Values */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-12"
