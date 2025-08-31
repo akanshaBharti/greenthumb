@@ -6,8 +6,6 @@ import { Button } from ".././components/ui/button";
 import { Badge } from ".././components/ui/badge";
 import { Input } from ".././components/ui/input";
 import { Calendar, Clock } from "lucide-react";
-// import { useMutation, useQueryClient } from "@tanstack/react-query"
-// import { apiRequest } from ".././lib/queryClient"
 import { useToast } from ".././hooks/use-toast";
 
 const filterButtons = [
@@ -103,26 +101,6 @@ export default function Blog() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [email, setEmail] = useState("");
   const { toast } = useToast();
-  // const queryClient = useQueryClient()
-
-  // const newsletterMutation = useMutation({
-  //   mutationFn: (data: { email: string }) => apiRequest('POST', '/api/newsletter', data),
-  //   onSuccess: () => {
-  //     toast({
-  //       title: "Success!",
-  //       description: "Thank you for subscribing to our newsletter!",
-  //     })
-  //     setEmail("")
-  //     queryClient.invalidateQueries({ queryKey: ['/api/newsletter'] })
-  //   },
-  //   onError: (error: any) => {
-  //     toast({
-  //       title: "Error",
-  //       description: error.message || "Failed to subscribe to newsletter",
-  //       variant: "destructive",
-  //     })
-  //   }
-  // })
 
   const filteredPosts = blogPosts.filter(
     (post) => activeFilter === "all" || post.category === activeFilter
@@ -138,7 +116,6 @@ export default function Blog() {
       });
       return;
     }
-    // newsletterMutation.mutate({ email })
   };
 
   return (

@@ -82,7 +82,7 @@ const socialLinks = [
   { name: "Instagram", icon: Instagram, href: "#" },
   { name: "Facebook", icon: Facebook, href: "#" },
   { name: "Twitter", icon: Twitter, href: "#" },
-  { name: "Youtube", icon: Youtube, href: "#" },
+  { name: "Youtube", icon: Youtube, href: "#" },  
 ];
 
 export default function Contact() {
